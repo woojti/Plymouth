@@ -1,0 +1,61 @@
+random_number = Math.Random();
+
+
+
+
+#fun 
+
+# Load the initial image
+some_image = Image("1.png");
+first_sprite = Sprite(some_image);
+
+# Center the sprite on the screen
+first_sprite.SetY(Window.GetHeight() / 2 - some_image.GetHeight() / 2);
+first_sprite.SetX(Window.GetWidth() / 2 - some_image.GetWidth() / 2);
+
+# Initialize the variable a
+a = 0;
+a_rev =230;
+
+# Define the refresh callback function to update the image
+fun refresh_callback() {
+    a = a + 0.5;
+
+    # Load the new image based on the value of a
+    change = Image(a + ".png");
+    first_sprite.SetImage(change);
+
+    # Reset a if it reaches a specific value
+    if (a == 233) {
+        a = 36;
+    }
+}
+
+fun refresh_callback_reverse() {
+    
+    a_rev = a_rev - 0.5;
+
+    # Load the new image based on the value of a
+    change = Image(a_rev + ".png");
+    first_sprite.SetImage(change);
+
+    # Reset a if it reaches a specific value
+    if (a_rev == 1) {
+        a_rev = 206;
+    }
+}
+ 
+
+# Set the initial background color
+Window.SetBackgroundTopColor(0, 0, 0);
+Window.SetBackgroundBottomColor(0, 0, 0);
+
+# Register the refresh callback function
+
+
+if (random_number > 0.5){
+    Plymouth.SetRefreshFunction(refresh_callback);
+    }
+if (random_number < 0.5){
+    Plymouth.SetRefreshFunction(refresh_callback_reverse);
+    }

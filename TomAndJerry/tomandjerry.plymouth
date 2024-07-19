@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=TomAndJerry
+Description=TomAndJerry
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/TomAndJerry/bootAnimation
+ScriptFile=/usr/share/plymouth/themes/TomAndJerry/tomandjerry.script
